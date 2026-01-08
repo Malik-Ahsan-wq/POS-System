@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+/* Global Cursor Styles */
+button, 
+[role="button"],
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+.btn {
+  cursor: pointer !important;
+}
+
+@media print {
+  /* Hide everything by default */
+  body * {
+    visibility: hidden;
+  }
+
+  /* Show only the receipt */
+  #receipt-print,
+  #receipt-print * {
+    visibility: visible;
+  }
+
+  /* Position the receipt at the top-left */
+  #receipt-print {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%; /* Let it fill the paper width */
+    max-width: 80mm; /* Constraint for 80mm paper */
+    margin: 0;
+    padding: 0;
+    background: white;
+  }
+
+  /* Remove default margins/padding */
+  @page {
+    size: 80mm auto; /* Set paper size */
+    margin: 0; /* Remove margins */
+  }
+
+  /* Hide headers/footers if possible (browser dependent) */
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 80mm; /* Force width */
+  }
+}
