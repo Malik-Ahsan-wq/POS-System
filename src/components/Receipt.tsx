@@ -76,7 +76,6 @@ export default function Receipt({ cart, total }: { cart: CartItem[]; total: numb
         <div className="text-center text-xs">
           <p className="font-bold mb-1">*** THANK YOU ***</p>
           <p>Please visit again!</p>
-          <p className="mt-2 text-[10px]">Software by Trae AI</p>
         </div>
       </div>
     </>
